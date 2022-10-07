@@ -108,8 +108,8 @@ gs://$GCS_BUCKET_NAME/${TABLE}_format_testing/JSON_GZIP/*.json.gz
 
 
 # edit the table-create.hql script
-cp table-create.hql.template table-create.hql
-sed -i "s|%%PROJECT_ID%%|$PROJECT_ID|g" table-create.hql
-sed -i "s|%%TABLE%%|$TABLE|g" table-create.hql
+cp scritps/table-create.hql.template scripts/table-create.hql
+sed -i "s|%%PROJECT_ID%%|$PROJECT_ID|g" scripts/table-create.hql
+sed -i "s|%%TABLE%%|$TABLE|g" scripts/table-create.hql
 
-gcloud dataproc jobs submit hive --region=$REGION --cluster=$CLUSTER_NAME --file=table-create.hql 
+gcloud dataproc jobs submit hive --region=$REGION --cluster=$CLUSTER_NAME --file=scripts/table-create.hql 
