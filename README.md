@@ -8,4 +8,6 @@ https://github.com/CYarros10/gcp-dataproc-workflow-template-custom-image-sample
 
 Then:
 
+```
 ./scripts/setup <project_id> <project_number> <region> <dataset> <table>
+```
