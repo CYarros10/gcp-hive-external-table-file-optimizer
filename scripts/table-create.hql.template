@@ -77,7 +77,7 @@ CREATE EXTERNAL TABLE %%TABLE%%_csv (
     comment_day int
 )
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
-WITH SERDEPROPERTIES ( "separatorChar" = "\t" ) 
+WITH SERDEPROPERTIES ( "separatorChar" = "\\" ) 
 STORED AS TEXTFILE
 LOCATION
  'gs://%%PROJECT_ID%%-services/%%TABLE%%_format_testing/CSV'
@@ -108,7 +108,7 @@ CREATE EXTERNAL TABLE %%TABLE%%_csv_gz (
     comment_day int
 )
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
-WITH SERDEPROPERTIES ( "separatorChar" = "\t" ) 
+WITH SERDEPROPERTIES ( "separatorChar" = "\\" ) 
 STORED AS TEXTFILE
 LOCATION
  'gs://%%PROJECT_ID%%-services/%%TABLE%%_format_testing/CSV_GZIP'
