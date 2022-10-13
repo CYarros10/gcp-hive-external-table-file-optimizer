@@ -38,7 +38,7 @@ ROW FORMAT SERDE
 'org.apache.hive.hcatalog.data.JsonSerDe'
 STORED AS TEXTFILE
 LOCATION
- 'gs://%%PROJECT_ID%%-services/%%TABLE%%/'
+ 'gs://%%PROJECT_ID%%-services/%%TABLE%%'
 ;
 
 msck repair table %%TABLE%%;
@@ -362,6 +362,7 @@ LOCATION
 TBLPROPERTIES("parquet.compress"="GZIP")
 ;
 
+msck repair table %%TABLE%%;
 msck repair table %%TABLE%%_csv;
 msck repair table %%TABLE%%_csv_gz;
 msck repair table %%TABLE%%_json;
