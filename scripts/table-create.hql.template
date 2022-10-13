@@ -1,3 +1,15 @@
+DROP TABLE IF EXISTS %%TABLE%%;
+DROP TABLE IF EXISTS %%TABLE%%_csv;
+DROP TABLE IF EXISTS %%TABLE%%_csv_gz;
+DROP TABLE IF EXISTS %%TABLE%%_json;
+DROP TABLE IF EXISTS %%TABLE%%_json_gz;
+DROP TABLE IF EXISTS %%TABLE%%_parquet;
+DROP TABLE IF EXISTS %%TABLE%%_parquet_gzip;
+DROP TABLE IF EXISTS %%TABLE%%_parquet_snappy;
+DROP TABLE IF EXISTS %%TABLE%%_avro;
+DROP TABLE IF EXISTS %%TABLE%%_avro_deflate;
+DROP TABLE IF EXISTS %%TABLE%%_avro_snappy;
+
 CREATE EXTERNAL TABLE %%TABLE%% (
     comment_id string,
     subreddit string,
@@ -26,7 +38,7 @@ ROW FORMAT SERDE
 'org.apache.hive.hcatalog.data.JsonSerDe'
 STORED AS TEXTFILE
 LOCATION
- 'gs://%%PROJECT_ID%%-services/historical_%%TABLE%%_new/'
+ 'gs://%%PROJECT_ID%%-services/%%TABLE%%/'
 ;
 
 msck repair table %%TABLE%%;
