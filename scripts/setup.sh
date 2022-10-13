@@ -30,6 +30,11 @@ gcloud beta dataproc clusters create $CLUSTER_NAME-hive \
 
 bq --location=US mk $DATASET
 
+# refresh
+bq rm -f -t ${DATASET}.${TABLE}
+
+sleep 30 
+
 bq load \
     --autodetect \
     --source_format=NEWLINE_DELIMITED_JSON \
