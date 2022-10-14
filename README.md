@@ -10,7 +10,7 @@ Proof-of-concept to showcase impact of file size on Hive external tables and que
 2. [Use Case](#use-case)
 3. [Guide](#guide)
 4. [Sample Queries](#sample-queries)
-5. [Sample Output](#sample-output)
+5. [Sample Results](#sample-results)
 
 
 ----
