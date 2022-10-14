@@ -108,15 +108,15 @@ select count(*) from comments_parquet_gzip;
 
 ## sample-results
 
-1) 1.20 seconds   :   parquet gzip
-2) 1.68 seconds   :   parquet snappy
-3) 1.80 seconds   :   json
-4) 2.17 seconds   :   parquet
-5) 3.72 seconds   :   json gzip
-6) 8.31 seconds   :   avro snappy
-7) 8.74 seconds   :   avro deflate
-8) 14.98 seconds  :   avro
-9) 471.98 seconds :   raw small files
+1)  1.20 seconds   :   parquet gzip
+2)  1.68 seconds   :   parquet snappy
+3)  1.80 seconds   :   json
+4)  2.17 seconds   :   parquet
+5)  3.72 seconds   :   json gzip
+6)  8.31 seconds   :   avro snappy
+7)  8.74 seconds   :   avro deflate
+8)  14.98 seconds  :   avro
+9)  471.98 seconds :   raw small files
 
 comments = 6851 x 10kb file(s)
 
