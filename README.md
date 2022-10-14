@@ -31,7 +31,7 @@ File type and compression can also affect query performance.
 
 ## use-case
 
-This repository sets up a real-world example of comparing query performance between different file sizes on Google Cloud Storage.  It provides code that can perform **file compaction** using [Google Bigquery](https://cloud.google.com/bigquery) and the [bq cli](https://cloud.google.com/bigquery/docs/bq-command-line-tool), and in doing so, optimizes your query performance when using Cloud Dataproc + External Tables in Hive + data on Google Cloud Storage.
+This repository sets up a real-world example of comparing query performance between different file sizes on Google Cloud Storage.  It provides code to perform a one-time **file compaction** using [Google Bigquery](https://cloud.google.com/bigquery) and the [bq cli](https://cloud.google.com/bigquery/docs/bq-command-line-tool), and in doing so, optimizes your query performance when using Cloud Dataproc + External Tables in Hive + data on Google Cloud Storage.
 
 The setup script will create external tables with source data in the form of:
 
