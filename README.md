@@ -21,7 +21,9 @@ One way to perform data analytics is through Hive on [Cloud Dataproc]().  You ca
 
 In older HDFS / Hive On-Prem setups, the compute and storage were closely tied together, either on the same machine or in a nearby machine.  But when storage is separated on the cloud, you save on storage costs at the expense of latency.  It takes time for Cloud Dataproc to retrieve files on Google Cloud Storage.  When there are many small files, this can negatively affect query performance.
 
-File type and compression can also affect query performance.  It is important to be deliberate in choosing your Google Cloud Storage file strategy when performing data analytics on Google Cloud.
+File type and compression can also affect query performance.  
+
+**It is important to be deliberate in choosing your Google Cloud Storage file strategy when performing data analytics on Google Cloud.**
 
 
 ----
@@ -73,8 +75,6 @@ chmod 777 ./scripts/setup.sh
 ```sql
 
 msck repair table comments;
-msck repair table comments_csv;
-msck repair table comments_csv_gz;
 msck repair table comments_json;
 msck repair table comments_json_gz;
 msck repair table comments_avro;
@@ -93,8 +93,6 @@ add jar /lib/hive/lib/json4s-jackson_2.12-3.5.3.jar;
 add jar /lib/hive/lib/json4s-scalap_2.12-3.5.3.jar;
 
 select count(*) from comments;
-select count(*) from comments_csv;
-select count(*) from comments_csv_gz;
 select count(*) from comments_json;
 select count(*) from comments_json_gz;
 select count(*) from comments_avro;
@@ -103,8 +101,6 @@ select count(*) from comments_avro_deflate;
 select count(*) from comments_parquet;
 select count(*) from comments_parquet_snappy;
 select count(*) from comments_parquet_gzip;
-select count(*) from comments_csv;
-select count(*) from comments_parquet;
 
 ```
 
@@ -112,9 +108,15 @@ select count(*) from comments_parquet;
 
 ## sample-results
 
-The processed files in Google Cloud Storage will contain analyzed/processed comments such as this:
-
-(different row counts based on loads)
+1. 1.20 seconds   :   parquet gzip
+2. 1.68 seconds   :   parquet snappy
+3. 1.80 seconds   :   json
+4. 2.17 seconds   :   parquet
+5. 3.72 seconds   :   json gzip
+6. 8.31 seconds   :   avro snappy
+7. 8.74 seconds   :   avro deflate
+8. 14.98 seconds  :   avro
+9. 471.98 seconds :   raw small files
 
 comments = 6851 x 10kb file(s)
 
