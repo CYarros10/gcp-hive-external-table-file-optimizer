@@ -43,23 +43,6 @@ bq load \
 
 sleep 30 
 
-# --- CSV
-
-bq extract --location=US \
---destination_format CSV \
---compression GZIP \
---field_delimiter 'Tab' \
---print_header=false \
-$PROJECT_ID:$DATASET.$TABLE \
-gs://$GCS_BUCKET_NAME/${TABLE}_format_testing/CSV_GZIP/*.csv.gz
-
-bq extract --location=US \
---destination_format CSV \
---field_delimiter 'Tab' \
---print_header=false \
-$PROJECT_ID:$DATASET.$TABLE \
-gs://$GCS_BUCKET_NAME/${TABLE}_format_testing/CSV/*.csv
-
 # --- AVRO
 
 bq extract --location=US \
