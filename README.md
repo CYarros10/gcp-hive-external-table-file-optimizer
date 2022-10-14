@@ -116,54 +116,38 @@ The processed files in Google Cloud Storage will contain analyzed/processed comm
 
 (different row counts based on loads)
 
-comments = 6851 x 10kb files = 
+comments = 6851 x 10kb file(s)
 
 ![Stack-Resources](images/comments.png)
 
-comments_csv
-
-![Stack-Resources](images/comments_csv.png)
-
-comments_csv_gz
-
-![Stack-Resources](images/comments_csv_gz.png)
-
-comments_json
+comments_json = 1 x 95.6mb file(s)
 
 ![Stack-Resources](images/comments_json.png)
 
-comments_json_gz
+comments_json_gz = 1 x 17.1mb file(s)
 
 ![Stack-Resources](images/comments_json_gz.png)
 
-comments_avro
+comments_avro = 1 x 44.7mb file(s)
 
 ![Stack-Resources](images/comments_avro.png)
 
-comments_avro_snappy
+comments_avro_snappy = 1 x 25.7mb file(s)
 
 ![Stack-Resources](images/comments_avro_snappy.png)
 
-comments_avro_deflate
+comments_avro_deflate = 1 x 18.4mb file(s)
 
-![Stack-Resources](images/comments_avro_deflat.png)
+![Stack-Resources](images/comments_avro_deflate.png)
 
-comments_parquet
+comments_parquet = 1 x 32.2mb file(s)
 
 ![Stack-Resources](images/comments_parquet.png)
 
-comments_parquet_snappy
+comments_parquet_snappy = 1 x 20.1mb file(s)
 
 ![Stack-Resources](images/comments_parquet_snappy.png)
 
-comments_parquet_gzip
+comments_parquet_gzip = 1 x 13.1mb file(s)
 
 ![Stack-Resources](images/comments_parquet_gzip.png)
-
-comments_csv
-
-![Stack-Resources](images/comments_csv.png)
-
-comments_parquet
-
-![Stack-Resources](images/comments_parquet.png)
