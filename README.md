@@ -58,8 +58,6 @@ Then:
 
 cd gcp-hive-external-table-file-optimizer
 
-chmod 777 ./scripts/setup.sh
-
 ./scripts/setup.sh <project_id> <project_number> <region> <dataset> <table>
 ```
 
@@ -105,15 +103,21 @@ select count(*) from comments_parquet_gzip;
 
 ## sample-results
 
-1) parquet gzip   :   1.64 seconds
-2) parquet snappy :   2.11 seconds
-3) json           :   2.35 seconds
-4) parquet        :   2.66 seconds
-5) json gzip      :   4.20 seconds
-6) avro snappy    :   8.79 seconds
-7) avro deflate   :   9.20 seconds
-8) avro           :   15.59 seconds
-9) source files   :   476.52 seconds
+sorted by query runtime: 
+
+| file type | compression | file count | file size (mb) | query runtime (seconds) |
+|---|--|---|---|---|
+| parquet | GZIP | 1 | 13.1 | 1.64 | 
+| parquet | SNAPPY | 1 | 20.1 | 2.11 |
+| json | none | 1 | 95.6 | 2.35 |
+| parquet | none | 1 | 32.2 | 2.66 |
+| json | GZIP | 1 | 17.1 | 4.20 |
+| avro | SNAPPY | 1 | 25.7 | 8.79 |
+| avro | DEFLATE | 1 | 18.4 | 9.20 |
+| avro | none | 1 | 44.7 | 15.59 |
+| json | none | 6851 | 0.01  | 476.52 |
+
+
 
 comments = 6851 x 10kb file(s)
 
