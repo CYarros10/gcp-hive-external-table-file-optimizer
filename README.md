@@ -1,4 +1,4 @@
-# gcp-file-compaction-poc
+# gcp-hive-external-table-file-optimizer
 
 Proof-of-concept to showcase impact of file size on Hive external tables and query speeds
 
@@ -64,9 +64,9 @@ https://github.com/CYarros10/gcp-dataproc-workflow-template-custom-image-sample
 Then:
 
 ```bash
-git clone https://github.com/CYarros10/gcp-file-compaction-poc.git
+git clone https://github.com/CYarros10/gcp-hive-external-table-file-optimizer.git
 
-cd gcp-file-compaction-poc
+cd gcp-hive-external-table-file-optimizer
 
 chmod 777 ./scripts/setup.sh
 
