@@ -26,6 +26,8 @@ File type and compression can also affect query performance.
 
 **It is important to be deliberate in choosing your Google Cloud Storage file strategy when performing data analytics on Google Cloud.**
 
+**In this example you'll see a 99.996% improvement in query run time.**
+
 ----
 
 ## use-case
