@@ -1,6 +1,6 @@
 # gcp-hive-external-table-file-optimizer
 
-Proof-of-concept to showcase impact of file size on Hive external tables and query speeds
+Proof-of-concept to showcase impact of file count, file size, and file type on Hive external tables and query speeds
 
 ----
 
