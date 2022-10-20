@@ -26,7 +26,6 @@ File type and compression can also affect query performance.
 
 **It is important to be deliberate in choosing your Google Cloud Storage file strategy when performing data analytics on Google Cloud.**
 
-
 ----
 
 ## use-case
@@ -34,23 +33,15 @@ File type and compression can also affect query performance.
 This repository sets up a real-world example of comparing query performance between different file sizes on Google Cloud Storage.  It provides code to perform a one-time **file compaction** using [Google Bigquery](https://cloud.google.com/bigquery) and the [bq cli](https://cloud.google.com/bigquery/docs/bq-command-line-tool), and in doing so, optimizes your query performance when using Cloud Dataproc + External Tables in Hive + data on Google Cloud Storage.
 
 The setup script will create external tables with source data in the form of:
-
-- small raw json files
-- compacted json files
-- compacted compressed json files
-- compacted parquet files
-- compacted compressed parquet files
-- compacted avro files
-- compacted compressed avro files
+    - small raw json files
+    - compacted json files
+    - compacted compressed json files
+    - compacted parquet files
+    - compacted compressed parquet files
+    - compacted avro files
+    - compacted compressed avro files
 
 Finally, it will show you how to query all of the tables and demonstrate query run times for each source data / file format.
-
-----
-
-## architecture
-
-![Stack Resources](images/architecture.png)
-
 
 ----
 
@@ -64,7 +55,6 @@ https://github.com/CYarros10/gcp-dataproc-workflow-template-custom-image-sample
 Then:
 
 ```bash
-git clone https://github.com/CYarros10/gcp-hive-external-table-file-optimizer.git
 
 cd gcp-hive-external-table-file-optimizer
 
